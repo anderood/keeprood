@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <GlobalStyle/>
       <Header/>
+      <Dashboard />
     </div>
   );
 }

@@ -1,5 +1,13 @@
+import { Card } from "../Card";
+import { Container } from "./styles";
+
 export function Dashboard() {
     return(
-        <h1>Dashboard</h1>
+        <Container>
+            <Card />
+            <Card />
+            <Card />
+            
+        </Container>
     );
 }
