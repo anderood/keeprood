@@ -30,4 +30,27 @@ export const GlobalStyle = createGlobalStyle`
     button {
         cursor: pointer;
     }
+
+    .overlay {
+        background: rgba(0,0,0,0.5);
+
+        position: fixed;
+        top: 0;
+        margin: 0;
+        left: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Modal {
+        width: 100%;
+        max-width: 576px;
+        background: var(--background);
+        padding: 3rem;
+        position: relative;
+        border-radius: 0.24rem;
+    }
 `;

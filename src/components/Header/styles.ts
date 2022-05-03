@@ -50,3 +50,7 @@ export const Content = styled.div`
 
     }
 `;
+
+export const Form = styled.form`
+       
+`;
