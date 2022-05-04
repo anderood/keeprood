@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
+import { NewNote } from "./components/NewNote";
 import { GlobalStyle } from "./styles/global";
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
       <GlobalStyle/>
       <Header 
         onOpenNewTransactionModal={handleModalIsOpen}
+      />
+      <NewNote 
         isOpen={modalIsOpen}
-        onRequestClose={handleModalIsClose}
-        />
+        onRequestClose={handleModalIsClose} 
+      />
       <Dashboard />
     </div>
   );
