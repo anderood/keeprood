@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { Container, Content, Form } from "./styles";
+import closeImg from '../../assets/close.svg';
 
 interface HeaderProps {
     onOpenNewTransactionModal: () => void;
@@ -20,16 +21,22 @@ export function Header({onOpenNewTransactionModal, isOpen, onRequestClose }: Hea
             <Modal             
                 isOpen={isOpen} 
                 onRequestClose={onRequestClose} 
-                overlayClassName="overlay"
-                className="Modal"
+                overlayClassName="react-modal-overlay"
+                className="react-modal-content"
                 >
-
+                <button 
+                    type='button'
+                    onClick={onRequestClose} 
+                    className="react-modal-close"
+                    >
+                    <img src={closeImg} alt="Fechar MOdal" />
+                </button>
 
                 <Form action="" method="post">
                     <h2>Cadastrar Nota</h2>
                     
                     <input type="text" name="" id="" placeholder='Titulo' />
-                    <textarea name="" id="" ></textarea>
+                    <textarea name="" id="" placeholder='Descrição' ></textarea>
                     <button>Cadastrar</button>
                     
                 </Form>
