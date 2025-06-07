@@ -17,15 +17,12 @@ function App() {
   }
   return (
     <div className="App">
-      <GlobalStyle/>
-      <Header 
-        onOpenNewTransactionModal={handleModalIsOpen}
-      />
-      <NewNote 
-        isOpen={modalIsOpen}
-        onRequestClose={handleModalIsClose} 
-      />
-      <Dashboard />
+        <div className="container">
+
+            <Header onOpenNewTransactionModal={handleModalIsOpen}/>
+            <Dashboard />
+        </div>
+
     </div>
   );
 }
