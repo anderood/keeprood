@@ -2,8 +2,8 @@ import { FaCheckSquare, FaEdit, FaImage } from 'react-icons/fa';
 
 export default function NewNote(){
     return(
-        <div className="container mx-auto bg-light">
-           <div className="row p-5 d-flex justify-content-center">
+        <div className="container mx-auto bg-light mt-5">
+           <div className="row pt-5 pb-3 d-flex justify-content-center">
                <div className="" style={{ width: '600px'}}>
                    <div className="card shadow-sm border-0 rounded px-3 py-2 d-flex align-items-center flex-row">
                        <input

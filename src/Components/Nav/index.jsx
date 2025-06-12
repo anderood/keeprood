@@ -1,9 +1,8 @@
 export default function Nav() {
     return(
-        <nav className="navbar navbar-expand-lg bg-light px-4 border-bottom shadow-sm">
+        <nav className="navbar navbar-expand-lg bg-light px-4 border-bottom shadow-sm fixed-top">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">KeepRood</a>
-
                 <button
                     className="navbar-toggler"
                     type="button"
