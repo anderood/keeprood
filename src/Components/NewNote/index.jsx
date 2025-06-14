@@ -5,6 +5,7 @@ export default function NewNote(){
 
     const [isExpanded, setExpanded ] = useState(false);
     const [focus, setFocus] = useState(true);
+    const handleCollapse = () => setExpanded(false);
 
     const handleExpand = () => {
         !isExpanded ? setExpanded(true) : setExpanded(false)
@@ -12,11 +13,13 @@ export default function NewNote(){
 
     return(
         <>
-            {isExpanded ?
-                <div className="container mx-auto bg-light mt-5">
-                    <div className="row pt-5 pb-3 d-flex justify-content-center">
-                        <div className="" style={{ width: '600px'}} >
-                            <div className="card shadow border-0 rounded p-3 d-flex align-items-center" style={{ height: 'auto'}}>
+            <div className="container mx-auto bg-light mt-5" onClick={handleCollapse}>
+                <div className="row pt-5 pb-3 d-flex justify-content-center" >
+                    <div className="" style={{ width: '600px'}} >
+                        {isExpanded ?
+                            <div className="card shadow border-0 rounded p-3 d-flex align-items-center" style={{ height: 'auto'}}
+                                 onClick={(e) => e.stopPropagation()}
+                            >
                                 <div className="col-12">
                                     <input
                                         type="text"
@@ -31,24 +34,18 @@ export default function NewNote(){
                                     placeholder={"Criar uma nota..."}
                                     onFocus={() => setFocus(true)}
                                     rows={10}>
-                            </textarea>
+                                </textarea>
                                 </div>
                                 <div className="col-12 d-flex justify-content-end pt-4">
                                     <button
                                         className="btn btn-outline-dark"
-                                        onClick={handleExpand}
+                                        onClick={handleCollapse}
                                     >
                                         Fechar
                                     </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                :
-                <div className="container mx-auto bg-light mt-5">
-                    <div className="row pt-5 pb-3 d-flex justify-content-center">
-                        <div className="" style={{ width: '600px'}}>
+                            :
                             <div className="card shadow border-0 rounded px-3 py-2 d-flex align-items-center flex-row">
                                 <input
                                     type="text"
@@ -63,11 +60,10 @@ export default function NewNote(){
                                     <FaImage className="text-secondary" role="button" />
                                 </div>
                             </div>
-                        </div>
-
+                        }
                     </div>
                 </div>
-            }
+            </div>
         </>
     );
 }
