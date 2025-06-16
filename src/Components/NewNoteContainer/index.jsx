@@ -9,14 +9,24 @@ export default function NewNoteContainer(){
     const [isExpanded, setExpanded ] = useState(false);
     const [focus, setFocus] = useState(true);
     const [ listOptions, setListOptions ] = useState(false)
-    const handleCollapse = () => setExpanded(false);
+    const handleCollapse = () => {
+        setExpanded(false)
+    };
 
     const handleExpand = () => {
         !isExpanded ? setExpanded(true) : setExpanded(false)
     }
 
     const handleList = () => {
-        setListOptions(true)
+        !listOptions ? setListOptions(true) : setListOptions(false)
+    }
+
+    const componentView = () => {
+        if (listOptions) return (<NewNoteList closeOption={handleList} handleCollapse={handleCollapse}/> );
+        if (isExpanded) return (<NewNoteExpanded handleCollapse={handleCollapse} />);
+        return(
+            <NewNote handleList={handleList} handleExpand={handleExpand} />
+        );
     }
 
     return(
@@ -24,9 +34,7 @@ export default function NewNoteContainer(){
             <div className="container mx-auto bg-light mt-5" onClick={handleCollapse}>
                 <div className="row pt-5 pb-3 d-flex justify-content-center" >
                     <div className="" style={{ width: '600px'}} >
-                        {
-                             <NewNote />
-                        }
+                        {componentView()}
                     </div>
                 </div>
             </div>
