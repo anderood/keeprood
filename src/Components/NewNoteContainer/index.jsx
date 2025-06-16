@@ -22,7 +22,7 @@ export default function NewNoteContainer(){
     }
 
     const componentView = () => {
-        if (listOptions) return (<NewNoteList closeOption={handleList} handleCollapse={handleCollapse}/> );
+        if (listOptions) return (<NewNoteList closeOption={handleList} handleCollapse={()=>setListOptions(false)}/> );
         if (isExpanded) return (<NewNoteExpanded handleCollapse={handleCollapse} />);
         return(
             <NewNote handleList={handleList} handleExpand={handleExpand} />
