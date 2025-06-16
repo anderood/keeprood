@@ -1,8 +1,7 @@
-export default function NewNoteList({ handleCollapse }){
+export default function NewNoteExpanded({ handleCollapse }){
     return(
         <div className="card shadow border-0 rounded p-3 d-flex align-items-center" style={{ height: 'auto'}}
-             onClick={(e) => e.stopPropagation()}
-        >
+             onClick={(e) => e.stopPropagation()}>
             <div className="col-12">
                 <input
                     type="text"
@@ -10,15 +9,14 @@ export default function NewNoteList({ handleCollapse }){
                     placeholder="Titulo"
                 />
             </div>
-            <div className="col-12 container d-flex">
-                <input type="checkbox"/>
-                <input
-                    type="text"
-                    className="form-control border-0 shadow-none"
-                />
-            </div>
-            <div className="col-12 container d-flex">
-                <a href="#" className="text-decoration-line-through">+ Item da Lista</a>
+            <div className="col-12">
+                                <textarea
+                                    className="form-control border-0 mt-2 shadow-none"
+                                    style={{ resize: 'none'}}
+                                    placeholder={"Criar uma nota..."}
+                                    // onFocus={() => setFocus(true)}
+                                    rows={10}>
+                                </textarea>
             </div>
             <div className="col-12 d-flex justify-content-end pt-4">
                 <button

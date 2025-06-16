@@ -1,6 +1,6 @@
 import ItemCard from "../ItemCard/index.jsx";
 
-function Container(){
+function ContainerCards(){
     return(
         <div className="container bg-light p-4">
            <div className="row gap-2 p-3 d-flex justify-content-center">
@@ -10,4 +10,4 @@ function Container(){
     );
 }
 
-export default Container;
+export default ContainerCards;
