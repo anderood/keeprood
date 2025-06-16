@@ -11,8 +11,8 @@ export default function NewNote({ handleExpand, handleList }){
                 style={{ flex: 1 }}
             />
             <div className="d-flex align-items-center gap-3 ms-3">
-                <FaRegCheckSquare className="text-secondary" role="button" onClick={handleList} />
-                <FaImage className="text-secondary" role="button" />
+                <FaRegCheckSquare className="text-secondary fs-5" role="button" onClick={handleList} />
+                <FaImage className="text-secondary fs-5" role="button" />
             </div>
         </div>
     );
