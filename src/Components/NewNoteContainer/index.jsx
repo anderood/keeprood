@@ -9,8 +9,13 @@ export default function NewNoteContainer(){
     const [isExpanded, setExpanded ] = useState(false);
     const [focus, setFocus] = useState(true);
     const [ listOptions, setListOptions ] = useState(false)
+    const [ title, setTitle ] = useState("");
+    const [ textArea, setTextArea ] = useState('')
     const handleCollapse = () => {
+        // é chamado quando clicar fora do container
         setExpanded(false)
+
+        // fazer a verificação se tem arquivos para serem salvos
     };
 
     const handleExpand = () => {
@@ -23,7 +28,7 @@ export default function NewNoteContainer(){
 
     const componentView = () => {
         if (listOptions) return (<NewNoteList closeOption={handleList} handleCollapse={()=>setListOptions(false)}/> );
-        if (isExpanded) return (<NewNoteExpanded handleCollapse={handleCollapse} />);
+        if (isExpanded) return (<NewNoteExpanded handleCollapse={handleCollapse} title={title} textArea={textArea}/>);
         return(
             <NewNote handleList={handleList} handleExpand={handleExpand} />
         );
