@@ -1,7 +1,16 @@
 import {FaRegCheckSquare} from "react-icons/fa";
 import {SlPicture} from "react-icons/sl";
+import NewNote from "../NewNote";
+import {useState} from "react";
 
 export default function NewNoteInput() {
+
+    const [open, setOpen ] = useState(false)
+
+    if (open) {
+        return <NewNote />;
+    }
+
     return (
         <div className="w-screen h-auto mx-auto mt-10">
             <div className="flex justify-center">
@@ -10,16 +19,17 @@ export default function NewNoteInput() {
                         type="search"
                         id="search"
                         className="
-                              w-full
-                              p-2
-                              pl-4
-                              pr-16          /* espaço à direita pros ícones */
-                              border
-                              rounded
-                              shadow
-                              outline-none
-                              focus:shadow-lg
-                            "
+                          w-full
+                          p-2
+                          pl-4
+                          pr-16          /* espaço à direita pros ícones */
+                          border
+                          rounded
+                          shadow
+                          outline-none
+                          focus:shadow-lg
+                        "
+                        onClick={ () => setOpen(true) }
                         placeholder="Criar uma nota..."
                     />
 

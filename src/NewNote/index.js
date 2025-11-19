@@ -1,7 +1,23 @@
+import {useState} from "react";
+import NewNoteInput from "../NewNoteInput";
+
 export default function Index() {
+
+    const [close, setClose] = useState(false);
+
+    if (close) {
+        return <NewNoteInput />;
+    }
+
+    function handleCloseOption(e){
+        e.preventDefault();
+        setClose(true)
+    }
+
+
     return (
-        <div className="min-h w-full flex justify-center pt-10 bg-slate-100">
-            <div className="w-full max-w-xl bg-white border border-gray-200 rounded-2xl shadow-md p-4">
+        <div className="min-h w-full flex justify-center pt-10 bg-slate-100" onClick={ handleCloseOption } >
+            <div className="w-full max-w-xl bg-white border border-gray-200 rounded-2xl shadow-md p-4" >
                 <input
                     type="text"
                     className="
