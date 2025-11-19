@@ -1,5 +1,5 @@
 import { FaSearch } from "react-icons/fa";
-import NewNote from "./NewNote";
+import NewNoteInput from "./NewNoteInput";
 
 export default function Home() {
     return (
@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
             </nav>
 
-            <NewNote />
+            <NewNoteInput />
 
         </>
     );

@@ -1,36 +1,43 @@
-import {FaRegCheckSquare} from "react-icons/fa";
-import {SlPicture} from "react-icons/sl";
-
-export default function NewNote() {
+export default function Index() {
     return (
-        <div className="w-screen h-auto mt-10">
-            <div className="flex justify-center">
-                <div className="relative m-5">
-                    <input
-                        type="search"
-                        id="search"
-                        className="
-                              w-[500px]
-                              p-2
-                              pl-4
-                              pr-16          /* espaço à direita pros ícones */
-                              border
-                              rounded
-                              shadow
-                              outline-0
-                              focus:shadow-lg
-                            "
-                        placeholder="Crie uma nota..."
-                        required
-                    />
+        <div className="min-h w-full flex justify-center pt-10 bg-slate-100">
+            <div className="w-full max-w-xl bg-white border border-gray-200 rounded-2xl shadow-md p-4">
+                <input
+                    type="text"
+                    className="
+                        w-full
+                        bg-transparent
+                        border-none
+                        outline-none
+                        text-lg
+                        font-semibold
+                        placeholder:text-gray-500
+                    "
+                    placeholder="Título"
+                />
 
-                    <FaRegCheckSquare
-                        className="absolute right-12 top-1/2 -translate-y-1/2"
-                        size="1rem"
-                    />
-                    <SlPicture
-                        className="absolute right-5 top-1/2 -translate-y-1/2"
-                    />
+                <textarea
+                    className="
+                        mt-2
+                        w-full
+                        bg-transparent
+                        border-none
+                        outline-none
+                        resize-none
+                        text-sm
+                        placeholder:text-gray-500
+                    "
+                    rows={4}
+                    placeholder="Criar uma nota..."
+                />
+
+                <div className="mt-3 flex justify-end">
+                    <button
+                        type="button"
+                        className="text-sm font-medium text-blue-600"
+                    >
+                        Fechar
+                    </button>
                 </div>
             </div>
         </div>
