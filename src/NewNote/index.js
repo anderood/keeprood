@@ -4,14 +4,23 @@ import NewNoteInput from "../NewNoteInput";
 export default function Index() {
 
     const [close, setClose] = useState(false);
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
 
     if (close) {
         return <NewNoteInput />;
     }
 
-    function handleCloseOption(e){
-        e.preventDefault();
+    const handleCloseOption = (e) => {
         setClose(true)
+    }
+
+    const handleSetTitle = (e) => {
+        e.stopPropagation();
+    }
+
+    const handleSetDescription = (e) => {
+        e.stopPropagation();
     }
 
 
@@ -30,6 +39,8 @@ export default function Index() {
                         placeholder:text-gray-500
                     "
                     placeholder="Título"
+                    onClick={handleSetTitle}
+                    onChange={ (e) => setTitle(e.target.value)}
                 />
 
                 <textarea
@@ -45,6 +56,8 @@ export default function Index() {
                     "
                     rows={4}
                     placeholder="Criar uma nota..."
+                    onClick={handleSetDescription}
+                    onChange={ (e) => setDescription(e.target.value)}
                 />
 
                 <div className="mt-3 flex justify-end">
